@@ -185,11 +185,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 32,
+    "versionNumber": 33,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1630407960124
+    "lastModifiedOn": 1630408007548
   },
   "creationTag": {
     "versionNumber": 0,
@@ -199,7 +199,7 @@
     "lastModifiedOn": 1492181307419
   },
   "description": "# Welcome to the Basics 103 tutorial\n\n\u003cp class\u003d\"text-center\"\u003e\n   \u003ca href\u003d\"https://academy.dataiku.com/basics-103\" target\u003d\"_blank\" class\u003d\"btn btn-datasets-color btn-cta-big-mod\"\u003e\u003ci class\u003d\"icon-dku-sample_project\" class\u003d\"btn-cta-big-mod-icon\" /\u003e\u0026nbsp;Go to the Course on Dataiku Academy\n  \u003c/a\u003e\n\u003c/p\u003e\n\nIn this tutorial, we will join Haiku T-Shirt\u0027s customer data with the prepared orders data.  We will then enrich the combined data using the interactive Lab for further analysis.",
-  "shortDesc": "Join, enrich, and explore datasets",
+  "shortDesc": "The coffee project. ",
   "tags": [
     "tutorial",
     "academy"

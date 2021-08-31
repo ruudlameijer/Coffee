@@ -1,124 +1,160 @@
 {
-  "explorationFilters": [],
-  "maxProcessedMemTableBytes": -1,
-  "analysisColumnData": {},
   "columnsSelection": {
     "mode": "ALL"
   },
-  "globalSearchQuery": "",
-  "vizSampling": {
+  "explorationSampling": {
     "_refreshTrigger": 0,
+    "selection": {
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "maxStoredBytes": 104857600,
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL",
+      "timeout": -1
+    },
     "autoRefreshSample": false
   },
+  "explorationFilters": [],
   "origin": "PREPARE_RECIPE",
-  "sorting": [],
-  "coloring": {
-    "individualColumns": [],
-    "scheme": "MEANING_AND_STATUS",
-    "valueColoringMode": "HASH"
+  "exploreUIParams": {
+    "autoRefresh": true
   },
   "steps": [
     {
-      "alwaysShowComment": false,
       "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "FindReplace",
       "params": {
-        "matching": "FULL_STRING",
-        "stopAfterFirstMatch": false,
-        "appliesTo": "SINGLE_COLUMN",
+        "output": "",
+        "mapping": [
+          {
+            "from": "Wh Tshirt M",
+            "to": "White T-Shirt M"
+          },
+          {
+            "from": "Bl Tshirt M",
+            "to": "Black T-Shirt M"
+          },
+          {
+            "from": "Wh Tshirt F",
+            "to": "White T-Shirt F"
+          },
+          {
+            "from": "Bl Tshirt F",
+            "to": "Black T-Shirt F"
+          }
+        ],
         "normalization": "EXACT",
         "columns": [
           "tshirt_category"
         ],
-        "mapping": [
-          {
-            "to": "White T-Shirt M",
-            "from": "Wh Tshirt M"
-          },
-          {
-            "to": "Black T-Shirt M",
-            "from": "Bl Tshirt M"
-          },
-          {
-            "to": "White T-Shirt F",
-            "from": "Wh Tshirt F"
-          },
-          {
-            "to": "Black T-Shirt F",
-            "from": "Bl Tshirt F"
-          }
-        ],
-        "output": ""
+        "appliesTo": "SINGLE_COLUMN",
+        "stopAfterFirstMatch": false,
+        "matching": "FULL_STRING"
       },
-      "type": "FindReplace",
-      "disabled": false,
-      "metaType": "PROCESSOR"
+      "alwaysShowComment": false
     },
     {
-      "alwaysShowComment": false,
       "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "DateParser",
       "params": {
         "outCol": "",
-        "appliesTo": "SINGLE_COLUMN",
+        "formats": [
+          "yyyy/MM/dd"
+        ],
         "columns": [
           "order_date"
         ],
         "timezone_id": "UTC",
-        "lang": "auto",
-        "formats": [
-          "yyyy/MM/dd"
-        ]
+        "appliesTo": "SINGLE_COLUMN",
+        "lang": "auto"
       },
-      "type": "DateParser",
-      "disabled": false,
-      "metaType": "PROCESSOR"
+      "alwaysShowComment": false
     },
     {
-      "alwaysShowComment": false,
       "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "CreateColumnWithGREL",
       "params": {
         "expression": "tshirt_price * tshirt_quantity",
         "column": "total"
       },
-      "type": "CreateColumnWithGREL",
-      "disabled": false,
-      "metaType": "PROCESSOR"
+      "alwaysShowComment": false
     },
     {
-      "alwaysShowComment": false,
       "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
       "params": {
-        "appliesTo": "COLUMNS",
         "columns": [
           "tshirt_quantity",
           "tshirt_price"
         ],
-        "keep": false
+        "keep": false,
+        "appliesTo": "COLUMNS"
       },
-      "type": "ColumnsSelector",
+      "alwaysShowComment": false
+    },
+    {
+      "preview": true,
+      "designTimeReport": {
+        "report": {
+          "createdColumnCount": 2
+        }
+      },
+      "metaType": "PROCESSOR",
       "disabled": false,
-      "metaType": "PROCESSOR"
+      "type": "ColumnSplitter",
+      "params": {
+        "inCol": "order_id",
+        "keepEmptyChunks": false,
+        "limit": 0,
+        "separator": "-",
+        "outColPrefix": "order_id_",
+        "limitOutput": false,
+        "target": "COLUMNS"
+      },
+      "alwaysShowComment": false
     }
   ],
-  "exploreUIParams": {
-    "autoRefresh": true
-  },
+  "maxProcessedMemTableBytes": -1,
   "previewMode": "ALL_ROWS",
-  "explorationSampling": {
+  "vizSampling": {
     "_refreshTrigger": 0,
-    "autoRefreshSample": false,
-    "selection": {
-      "targetRatio": 0.02,
-      "maxRecords": 10000,
-      "maxStoredBytes": 104857600,
-      "partitionSelectionMethod": "ALL",
-      "withinFirstN": -1,
-      "samplingMethod": "HEAD_SEQUENTIAL",
-      "latestPartitionsN": 1,
-      "maxReadUncompressedBytes": -1,
-      "filter": {
-        "enabled": false,
-        "distinct": false
-      }
-    }
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "pages_visited": 113,
+    "tshirt_category": 155,
+    "order_date": 183,
+    "total": 100,
+    "customer_id": 100,
+    "order_id": 106,
+    "order_id_0": 100,
+    "order_id_1": 100
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
   }
 }

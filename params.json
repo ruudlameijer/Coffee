@@ -127,7 +127,6 @@
     }
   },
   "name": "Coffee",
-  "projectStatus": "Sandbox",
   "imgPattern": 3,
   "showInitials": false,
   "metrics": {
@@ -185,11 +184,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 33,
+    "versionNumber": 34,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1630408007548
+    "lastModifiedOn": 1630409354875
   },
   "creationTag": {
     "versionNumber": 0,
@@ -202,7 +201,8 @@
   "shortDesc": "The coffee project. ",
   "tags": [
     "tutorial",
-    "academy"
+    "academy",
+    "duplicated"
   ],
   "customFields": {},
   "checklists": {

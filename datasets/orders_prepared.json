@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
-      "login": "alex"
+      "login": "admin"
     },
-    "lastModifiedOn": 1492234154267
+    "lastModifiedOn": 1630409522117
   },
   "creationTag": {
     "versionNumber": 0,
@@ -101,6 +101,14 @@
         "type": "string"
       },
       {
+        "name": "order_id_0",
+        "type": "string"
+      },
+      {
+        "name": "order_id_1",
+        "type": "string"
+      },
+      {
         "name": "customer_id",
         "type": "string",
         "meaning": "Text"
@@ -114,7 +122,7 @@
         "type": "double"
       }
     ],
-    "userModified": false
+    "userModified": true
   },
   "dkuProperties": [],
   "metrics": {

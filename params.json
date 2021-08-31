@@ -125,7 +125,7 @@
       }
     }
   },
-  "name": "Basics 103 for Administrator",
+  "name": "Coffee",
   "projectStatus": "Sandbox",
   "imgPattern": 3,
   "showInitials": false,
@@ -184,11 +184,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 30,
+    "versionNumber": 31,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1630407928628
+    "lastModifiedOn": 1630407940134
   },
   "creationTag": {
     "versionNumber": 0,
